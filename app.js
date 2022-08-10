@@ -5,6 +5,7 @@ const parseISO = require('date-fns/parseISO')
 const app = express()
 const rateLimit = require('express-rate-limit')
 const port = 5222
+const host = '0.0.0.0'
 
 const limiter = rateLimit({
   windowMs: 1000,
@@ -13,6 +14,7 @@ const limiter = rateLimit({
   legacyHeaders: false,
   message: {'error': 'You can only make 3 calls per second'}
 })
+
 
 const splitDate = (date) => date.split('/')
 
@@ -46,6 +48,6 @@ app.get('/howold', (req, res) => {
   }
 })
 
-app.listen(port, () => {
+app.listen(port, host, () => {
   console.log(`App listening on port ${port}`)
 })

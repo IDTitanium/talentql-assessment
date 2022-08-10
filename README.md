@@ -1,5 +1,6 @@
 # Backend Assessment
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cc84ee0e8c9a4db4b7e323155807d6d1)](https://app.codacy.com/gh/IDTitanium/talentql-assessment?utm_source=github.com&utm_medium=referral&utm_content=IDTitanium/talentql-assessment&utm_campaign=Badge_Grade_Settings)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/16694d12a4bb4ff18e0cdf70d3086133)](https://www.codacy.com/gh/IDTitanium/talentql-assessment/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=IDTitanium/talentql-assessment&amp;utm_campaign=Badge_Grade)
 
 See DETAILS.md for API guide.

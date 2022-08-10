@@ -22,7 +22,7 @@ app.get('/howold', (req, res) => {
   try {
     if (!isMatch(req.query.dob, 'd/M/yyyy')) {
       return res.status(400).json({
-        'error': 'Invalid date, the format is 1/12/1990'
+        'error': 'Invalid date, the format is d/m/yyyy'
       })
     }
 

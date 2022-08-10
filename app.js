@@ -15,7 +15,6 @@ const limiter = rateLimit({
   message: {'error': 'You can only make 3 calls per second'}
 })
 
-
 const splitDate = (date) => date.split('/')
 
 app.use(limiter)
@@ -35,7 +34,7 @@ app.get('/howold', (req, res) => {
     }
     if (!isMatch(req.query.dob, 'd/M/yyyy')) {
       return res.status(400).json({
-        'error': 'Invalid date, the format is d/m/yyyy'
+        'error': 'Invalid date format, the format is d/m/yyyy'
       })
     }
 

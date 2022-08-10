@@ -7,7 +7,7 @@ const port = process.env.PORT || 5222
 const host = '0.0.0.0'
 
 const limiter = rateLimit({
-  windowMs: 2000,
+  windowMs: 1000,
   max: 3,
   standardHeaders: true,
   legacyHeaders: false,
@@ -19,6 +19,8 @@ const limiter = rateLimit({
 const splitDate = (date) => date.split('/')
 
 app.use(limiter)
+
+app.set('trust proxy', 1)
 
 app.get('/', (req, res) => {
   return res.send('Welcome to the Age Api')

@@ -59,3 +59,7 @@ This project uses Express framework, Date FNS for dates handling, Express Rate L
 The entire (core) application logic exists in the `app.js` file. 
 
 Within the `app.js` file, there is a simple validation for the date passed, and the follwing lines returns the actually age based on the given date.
+
+## Contributing
+
+If you find any issues, feel free to send in your PR!

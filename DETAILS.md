@@ -1,12 +1,12 @@
 # Project Details
 
-### How Does It Work?
+## How Does It Work
 
 This project contains an API endpoint that allows a user get age by passing in the date of birth. Usage information below.
 
 Api Url ==> `{BASE_URL}/howold`
 
-### API Usage
+## API Usage
 
 To use this api, you only have to attach a `dob` url parameter to the api url in a GET request.
 
@@ -52,7 +52,7 @@ When you hit the limit you get an error response.
 	}
 	```
 
-### Code Details
+## Code Details
 
 This project uses Express framework, Date FNS for dates handling, Express Rate Limiter library to handle rate limiting.
 

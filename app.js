@@ -1,7 +1,6 @@
 const express = require('express')
 const isMatch = require('date-fns/isMatch')
 const differenceInYears = require('date-fns/differenceInYears')
-const parseISO = require('date-fns/parseISO')
 const app = express()
 const rateLimit = require('express-rate-limit')
 const port = process.env.PORT || 5222
@@ -49,7 +48,7 @@ app.get('/howold', (req, res) => {
   } catch (e) {
     console.log(e)
     return res.status(500).json({
-      'error': `Error occured while processing your request`
+      'error': 'Error occured while processing your request'
     })
   }
 })

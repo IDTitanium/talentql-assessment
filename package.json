@@ -1,0 +1,25 @@
+{
+  "name": "talentql-assessment",
+  "version": "1.0.0",
+  "description": "An endpoint to calculate age",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IDTitanium/talentql-assessment.git"
+  },
+  "author": "Idris Lawal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IDTitanium/talentql-assessment/issues"
+  },
+  "homepage": "https://github.com/IDTitanium/talentql-assessment#readme",
+  "dependencies": {
+    "date-fns": "^2.29.1",
+    "express": "^4.18.1",
+    "express-rate-limit": "^6.5.1"
+  }
+}

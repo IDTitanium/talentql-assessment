@@ -26,6 +26,11 @@ app.get('/', (req, res) => {
 
 app.get('/howold', (req, res) => {
   try {
+    if (!req.query.dob) {
+      return res.status(422).json({
+        'error': 'dob is required'
+      })
+    }
     if (!isMatch(req.query.dob, 'd/M/yyyy')) {
       return res.status(400).json({
         'error': 'Invalid date, the format is d/m/yyyy'

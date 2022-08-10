@@ -18,6 +18,10 @@ const splitDate = (date) => date.split('/')
 
 app.use(limiter)
 
+app.get('/', (req, res) => {
+  return res.send('Welcome to the Age Api')
+})
+
 app.get('/howold', (req, res) => {
   try {
     if (!isMatch(req.query.dob, 'd/M/yyyy')) {

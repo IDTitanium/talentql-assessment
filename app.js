@@ -4,7 +4,7 @@ const differenceInYears = require('date-fns/differenceInYears')
 const parseISO = require('date-fns/parseISO')
 const app = express()
 const rateLimit = require('express-rate-limit')
-const port = 5222
+const port = process.env.PORT || 5222
 const host = '0.0.0.0'
 
 const limiter = rateLimit({

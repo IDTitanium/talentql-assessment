@@ -1,5 +1,7 @@
 # Backend Assessment
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cc84ee0e8c9a4db4b7e323155807d6d1)](https://app.codacy.com/gh/IDTitanium/talentql-assessment?utm_source=github.com&utm_medium=referral&utm_content=IDTitanium/talentql-assessment&utm_campaign=Badge_Grade_Settings)
+
 See DETAILS.md for API guide.
 
 Build and deploy a very simple API that does the following

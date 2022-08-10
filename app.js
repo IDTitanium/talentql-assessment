@@ -8,10 +8,11 @@ const port = process.env.PORT || 5222
 const host = '0.0.0.0'
 
 const limiter = rateLimit({
-  windowMs: 1000,
+  windowMs: 2000,
   max: 3,
   standardHeaders: true,
   legacyHeaders: false,
+  statusCode: 429,
   message: {'error': 'You can only make 3 calls per second'}
 })
 

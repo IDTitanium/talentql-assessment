@@ -28,20 +28,9 @@ There `dob` paramter is compulsory and is being validated.
 
 Expected date format for `dob` is `day/month/year`. Hence, to represent 8th of February, 2001. You use `8/2/2001`.
 
-When the wrong date format is passed you get a validation error.
+There is also support for UNIX time. So you can pass you dob in unix time. Example `8/2/2001` will roughly translate to `981639649` in UNIX time.
 
-Example: 
-
-	`GET `{BASE_URL}/howold?dob=1/1``
-
-Expected response
-
-	Status code: 400
-	```
-	{
-		"error": "Invalid date, the format is d/m/yyyy"
-	}
-	```
+When the wrong date format is passed you may get a wrong age calculation.
 
 The API is also rate limited. This means you can only make 3 api calls per second.
 When you hit the limit you get an error response.

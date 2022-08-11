@@ -27,14 +27,14 @@ app.use(limiter)
 
 app.set('trust proxy', 1)
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   return res.send('Welcome to the Age Api, version 1.0.0')
 })
 
 app.get('/howold', (req, res) => {
   try {
     if (!req.query.dob) {
-      return res.status(400).send({
+      return res.status(422).send({
         'error': 'dob is required'
       })
     }
@@ -61,7 +61,7 @@ app.get('/howold', (req, res) => {
     })
   } catch (e) {
     console.log(e)
-    return res.status(500).send({
+    return res.status(400).send({
       'error': 'Error occured while processing your request'
     })
   }

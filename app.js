@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 app.get('/howold', (req, res) => {
   try {
     if (!req.query.dob) {
-      return res.status(422).send({
+      return res.status(400).send({
         'error': 'dob is required'
       })
     }

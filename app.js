@@ -47,6 +47,11 @@ app.get('/howold', (req, res) => {
     const [day, month, year] = splitDate(req.query.dob)
     let date
     if (!day || !month || !year) {
+      if (isNaN(Number(req.query.dob))) {
+        return res.status(400).send({
+              'error': 'Invalid date format, try the format is d/m/yyyy'
+            })
+      }
       date = new Date(Number(req.query.dob))
     } else {
       const monthIndex = month - 1

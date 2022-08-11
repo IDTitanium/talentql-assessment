@@ -1,5 +1,5 @@
 const express = require('express')
-const isMatch = require('date-fns/isMatch')
+// const isMatch = require('date-fns/isMatch')
 const differenceInYears = require('date-fns/differenceInYears')
 const app = express()
 const rateLimit = require('express-rate-limit')
@@ -38,15 +38,22 @@ app.get('/howold', (req, res) => {
         'error': 'dob is required'
       })
     }
-    if (!isMatch(req.query.dob, 'd/M/yyyy')) {
-      return res.status(400).send({
-        'error': 'Invalid date format, the format is d/m/yyyy'
-      })
-    }
+    // if (!isMatch(req.query.dob, 'd/M/yyyy')) {
+    //   return res.status(400).send({
+    //     'error': 'Invalid date format, the format is d/m/yyyy'
+    //   })
+    // }
 
     const [day, month, year] = splitDate(req.query.dob)
-    monthIndex = month - 1
-    const age = differenceInYears(new Date(), new Date(year, monthIndex, day))
+    let date
+    if (!day || !month || !year) {
+      date = new Date(Number(req.query.dob))
+    } else {
+      const monthIndex = month - 1
+      date = new Date(year, monthIndex, day)
+    }
+
+    const age = differenceInYears(new Date(), date)
     
     return res.status(200).send({
       'age': age,

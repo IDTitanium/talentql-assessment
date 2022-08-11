@@ -17,9 +17,11 @@ const limiter = rateLimit({
 
 const splitDate = (date) => date.split('/')
 
-app.set('trust proxy', 1)
-
 app.use(limiter)
+
+
+app.set('trust proxy', 1)
+app.get('/ip', (request, response) => response.send(request.ip))
 
 app.get('/', (req, res) => {
   return res.send('Welcome to the Age Api')

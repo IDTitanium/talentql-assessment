@@ -17,13 +17,13 @@ const limiter = rateLimit({
 
 const splitDate = (date) => date.split('/')
 
-app.use(limiter)
-
 app.use(function(_req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+app.use(limiter)
 
 app.set('trust proxy', 1)
 

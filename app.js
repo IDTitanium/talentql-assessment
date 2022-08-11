@@ -28,12 +28,12 @@ app.get('/', (req, res) => {
 app.get('/howold', (req, res) => {
   try {
     if (!req.query.dob) {
-      return res.status(422).json({
+      return res.status(422).send({
         'error': 'dob is required'
       })
     }
     if (!isMatch(req.query.dob, 'd/M/yyyy')) {
-      return res.status(400).json({
+      return res.status(400).send({
         'error': 'Invalid date format, the format is d/m/yyyy'
       })
     }
@@ -42,13 +42,13 @@ app.get('/howold', (req, res) => {
     monthIndex = month - 1
     const age = differenceInYears(new Date(), new Date(year, monthIndex, day))
     
-    return res.status(200).json({
-      'data': age,
+    return res.status(200).send({
+      'age': age,
       'message': `You are ${age} years old`
     })
   } catch (e) {
     console.log(e)
-    return res.status(500).json({
+    return res.status(500).send({
       'error': 'Error occured while processing your request'
     })
   }

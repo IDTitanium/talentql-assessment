@@ -51,4 +51,4 @@ Within the `app.js` file, there is a simple validation for the date passed, and 
 
 ## Contributing
 
-If you find any issues, feel free to send in your PR!
+If you find any issues, feel free to send in your PR! :)

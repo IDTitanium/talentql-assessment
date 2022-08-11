@@ -34,7 +34,7 @@ app.get('/', (_req, res) => {
 app.get('/howold', (req, res) => {
   try {
     if (!req.query.dob) {
-      return res.status(400).send({
+      return res.status(422).send({
         'error': 'dob is required'
       })
     }
@@ -48,8 +48,8 @@ app.get('/howold', (req, res) => {
     let date
     if (!day || !month || !year) {
       if (isNaN(Number(req.query.dob))) {
-        return res.status(400).send({
-              'error': 'Invalid date format, try the format is d/m/yyyy'
+        return res.status(422).send({
+              'error': 'Invalid date format, try the format d/m/yyyy'
             })
       }
       date = new Date(Number(req.query.dob))

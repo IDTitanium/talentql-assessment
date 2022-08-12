@@ -40,7 +40,7 @@ app.get('/howold', (req, res) => {
     }
     if (!isMatch(req.query.dob, 'd/M/yyyy') && isNaN(Number(req.query.dob))) {
       return res.status(422).send({
-        'error': 'Invalid date format, the format is d/m/yyyy'
+        'error': 'Invalid date format, the format is d/m/yyyy or a unix timestamp'
       })
     }
 
